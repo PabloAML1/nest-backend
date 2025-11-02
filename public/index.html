@@ -14,26 +14,33 @@
       </header>
 
       <div class="controls">
-        <button onclick="loadMovies()">
-          Load Movies
-        </button>
+        <button onclick="loadMovies()">Load Movies</button>
       </div>
-      <img src="" alt="" sizes="" srcset="" height="100" width=""/>
 
       <div class="movies-grid" id="moviesGrid"></div>
     </div>
 
+    <div id="confirmModal" class="modal-overlay">
+      <div class="modal">
+        <h3>Are you sure you want to delete this movie?</h3>
+        <div class="modal-buttons">
+          <button class="btn btn-cancel" onclick="closeConfirmModal()">
+            Cancel
+          </button>
+          <button class="btn btn-delete" id="confirmDeleteBtn">Delete</button>
+        </div>
+      </div>
+    </div>
+
     <script>
       const API_BASE = 'http://localhost:3000/movies';
+      let movieToDelete = null;
 
       async function loadMovies() {
         try {
           const response = await fetch(API_BASE);
-
-          if (!response.ok) {
+          if (!response.ok)
             throw new Error(`HTTP error! status: ${response.status}`);
-          }
-
           const movies = await response.json();
           displayMovies(movies);
         } catch (error) {
@@ -43,63 +50,67 @@
 
       function displayMovies(movies) {
         const moviesGrid = document.getElementById('moviesGrid');
-
         moviesGrid.innerHTML = movies
           .map(
             (movie) => `
-                <div class="movie-card">
-                    <div class="movie-poster">
-                        <img src="${movie.poster}" /> 
-                    </div>
-                    <div class="movie-info">
-                        <h3 class="movie-title">${movie.title || 'Untitled'}</h3>
-                        <div class="movie-details">
-                            <div class="movie-detail">
-                                <span class="detail-label">Director:</span>
-                                <span>${movie.director || 'Unknown'}</span>
-                            </div>
-                            <div class="movie-detail">
-                                <span class="detail-label">Year:</span>
-                                <span>${movie.year || 'Unknown'}</span>
-                            </div>
-                            <div class="movie-detail">
-                                <span class="detail-label">Genre:</span>
-                                <span>${Array.isArray(movie.genre) ? movie.genre.join(', ') : movie.genre || 'Unknown'}</span>
-                            </div>
-                        </div>
-                        <div class="movie-actions">
-                            <button class="delete-btn" onclick="deleteMovie('${movie.id}')">
-                                Delete
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `,
+              <div class="movie-card">
+                  <div class="movie-poster">
+                      <img src="${movie.poster}" /> 
+                  </div>
+                  <div class="movie-info">
+                      <h3 class="movie-title">${movie.title || 'Untitled'}</h3>
+                      <div class="movie-details">
+                          <div class="movie-detail">
+                              <span class="detail-label">Director:</span>
+                              <span>${movie.director || 'Unknown'}</span>
+                          </div>
+                          <div class="movie-detail">
+                              <span class="detail-label">Year:</span>
+                              <span>${movie.year || 'Unknown'}</span>
+                          </div>
+                          <div class="movie-detail">
+                              <span class="detail-label">Genre:</span>
+                              <span>${Array.isArray(movie.genre) ? movie.genre.join(', ') : movie.genre || 'Unknown'}</span>
+                          </div>
+                      </div>
+                      <div class="movie-actions">
+                          <button class="delete-btn" onclick="openConfirmModal('${movie.id}')">
+                              Delete
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          `,
           )
           .join('');
       }
 
-      async function deleteMovie(movieId) {
-        if (!confirm('Are you sure you want to delete this movie?')) {
-          return;
-        }
-
-        try {
-          
-          const response = await fetch(`${API_BASE}/${movieId}`, {
-            method: 'DELETE',
-          });
-
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-
-          
-          loadMovies();
-        } catch (error) {
-          console.error('Error deleting movie:', error);
-        }
+      function openConfirmModal(movieId) {
+        movieToDelete = movieId;
+        document.getElementById('confirmModal').style.display = 'flex';
       }
+
+      function closeConfirmModal() {
+        movieToDelete = null;
+        document.getElementById('confirmModal').style.display = 'none';
+      }
+
+      document
+        .getElementById('confirmDeleteBtn')
+        .addEventListener('click', async () => {
+          if (!movieToDelete) return;
+          try {
+            const response = await fetch(`${API_BASE}/${movieToDelete}`, {
+              method: 'DELETE',
+            });
+            if (!response.ok)
+              throw new Error(`HTTP error! status: ${response.status}`);
+            closeConfirmModal();
+            loadMovies();
+          } catch (error) {
+            console.error('Error deleting movie:', error);
+          }
+        });
 
       document.addEventListener('DOMContentLoaded', loadMovies);
     </script>

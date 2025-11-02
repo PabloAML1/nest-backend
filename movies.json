@@ -188,5 +188,140 @@
     ],
     "poster": "https://i.ebayimg.com/images/g/4goAAOSwMyBe7hnQ/s-l1200.webp",
     "rate": 5
+  },
+  {
+    "id": "e2a41b7b-58f4-4e6d-9e94-7e61d9117d11",
+    "title": "The Dark Knight",
+    "year": 2008,
+    "director": "Christopher Nolan",
+    "duration": 152,
+    "poster": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/xQPgyZOBhaz1GdCQIPf5A5VeFzO.jpg",
+    "genre": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "rate": 9.0
+  },
+  {
+    "id": "5fbd81a2-4ef8-46ab-8dc4-9cf1c2ce6543",
+    "title": "Fight Club",
+    "year": 1999,
+    "director": "David Fincher",
+    "duration": 139,
+    "poster": "https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg",
+    "genre": [
+      "Drama"
+    ],
+    "rate": 8.8
+  },
+  {
+    "id": "1c7e79e4-01cc-4f04-9f2d-7f4e7e9e42a0",
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "director": "Frank Darabont",
+    "duration": 142,
+    "poster": "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
+    "genre": [
+      "Drama"
+    ],
+    "rate": 9.3
+  },
+  {
+    "id": "57ab70f6-4c5e-4901-aac3-d9d33c14f345",
+    "title": "The Godfather",
+    "year": 1972,
+    "director": "Francis Ford Coppola",
+    "duration": 175,
+    "poster": "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg",
+    "genre": [
+      "Crime",
+      "Drama"
+    ],
+    "rate": 9.2
+  },
+  {
+    "id": "f0a91f34-f239-40b9-aeb2-f64f83b452b1",
+    "title": "Spider-Man: No Way Home",
+    "year": 2021,
+    "director": "Jon Watts",
+    "duration": 148,
+    "poster": "https://upload.wikimedia.org/wikipedia/en/0/00/Spider-Man_No_Way_Home_poster.jpg",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "rate": 8.2
+  },
+  {
+    "id": "c1330b64-73ff-4684-8f8a-2cbd15390ac4",
+    "title": "Oppenheimer",
+    "year": 2023,
+    "director": "Christopher Nolan",
+    "duration": 180,
+    "poster": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+    "genre": [
+      "Biography",
+      "Drama",
+      "History"
+    ],
+    "rate": 8.6
+  },
+  {
+    "id": "1f6e513b-dbc4-4de3-a3aa-2bc66e0a1c54",
+    "title": "The Wolf of Wall Street",
+    "year": 2013,
+    "director": "Martin Scorsese",
+    "duration": 180,
+    "poster": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/kW9LmvYHAaS9iA0tHmZVq8hQYoq.jpg",
+    "genre": [
+      "Biography",
+      "Comedy",
+      "Crime"
+    ],
+    "rate": 8.2
+  },
+  {
+    "id": "9b328a36-78a3-4d19-84d9-46a3b2f0bca5",
+    "title": "The Batman",
+    "year": 2022,
+    "director": "Matt Reeves",
+    "duration": 176,
+    "poster": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+    "genre": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "rate": 7.8
+  },
+  {
+    "id": "00e7df70-b9ed-4d24-a3a1-bf761d351542",
+    "title": "Dune: Part One",
+    "year": 2021,
+    "director": "Denis Villeneuve",
+    "duration": 155,
+    "poster": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
+    "genre": [
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "rate": 8.0
+  },
+  {
+    "id": "72aafad2-fb7e-4930-9377-37c3d9d91b7d",
+    "title": "Barbie",
+    "year": 2023,
+    "director": "Greta Gerwig",
+    "duration": 114,
+    "poster": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
+    "genre": [
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "rate": 7.0
   }
 ]
