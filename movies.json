@@ -201,7 +201,7 @@
       "Crime",
       "Drama"
     ],
-    "rate": 9.0
+    "rate": 9
   },
   {
     "id": "5fbd81a2-4ef8-46ab-8dc4-9cf1c2ce6543",
@@ -308,7 +308,7 @@
       "Drama",
       "Sci-Fi"
     ],
-    "rate": 8.0
+    "rate": 8
   },
   {
     "id": "72aafad2-fb7e-4930-9377-37c3d9d91b7d",
@@ -322,6 +322,6 @@
       "Comedy",
       "Fantasy"
     ],
-    "rate": 7.0
+    "rate": 7
   }
 ]
